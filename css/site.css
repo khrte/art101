@@ -34,3 +34,9 @@ h1 {
   border: solid 1px #888;
   background-color: #A3C9A8;
 }
+
+.container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
