@@ -12,8 +12,10 @@
     margin-left: 20px;
   }
   h1 {
-    color: #1b0042;
+    
+    color: #f55bc1;
     font-size: 200%;
+    font-family: fantasy;
   }
   p{
     font-family: fantasy;
