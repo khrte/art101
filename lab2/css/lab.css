@@ -2,8 +2,9 @@
 h1 {
   color: #f55bc1;
   font-size: 150%;
-  text-align: center;
-    }
+  text-align: center
+}
+
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
 .minor-section {
     padding: 10px;
