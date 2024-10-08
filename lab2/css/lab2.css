@@ -1,5 +1,5 @@
 /* Here we can set styles for this lab page that we don't want to effect others pages */
-head {
+.catbutt {
   color: #f55bc1;
   font-size: 150%;
   text-align: center
