@@ -1,9 +1,10 @@
 /* Here we can set styles for this lab page that we don't want to effect others pages */
-.catbutt {
+#catbutt {
   color: #f55bc1;
   font-size: 150%;
   text-align: center
 }
+
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
 .minor-section {
