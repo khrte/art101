@@ -1,10 +1,24 @@
 /* Here we can set styles for this lab page that we don't want to effect others pages */
-#catbutt {
-  color: #f55bc1;
-  font-size: 150%;
-  text-align: center
+#content {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 10px #d2670a;
+  background-color: #837ae9;
+  
 }
-
+  img{
+    width: 200px;
+    margin-left: 20px;
+  }
+  h1 {
+    color: #1b0042;
+    font-size: 200%;
+  }
+  p{
+    font-family: cursive;
+    text-indent: 10px;
+    margin-left: 10px;
+  }
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
 .minor-section {
