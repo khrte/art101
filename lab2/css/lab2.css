@@ -2,8 +2,8 @@
 #content {
   padding: 5px;
   margin-bottom: 10px;
-  border: thin 10px #d20a96;
-  background-color: #090007;
+  border: double 10px hsl(318, 91%, 43%);
+  background-color: black;
   
 }
   
@@ -14,7 +14,7 @@
   h1 {
     
     color: #f55bc1;
-    font-size: 200%;
+    font-size: 250%;
     font-family: fantasy;
   }
   p{
@@ -23,6 +23,7 @@
     margin-left: 10px;
     text-decoration: line-through;
     color: #d20a96;
+    font-size: 150%
   }
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
@@ -34,13 +35,18 @@
   }
 
 #workpls {
-    width: 200px;
+    width: 150px;
     margin-left: 20px;
+    margin-top: 0px;
+    margin: auto;
+    
 }
 .container img {
   height: 100%;
   width: 100%;
   object-fit: contain;
+  background-color: #090007;
+
 }
 
 body{
