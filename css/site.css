@@ -23,8 +23,8 @@ h1 {
 #content {
   margin: 10px;
   padding: 10px;
-  border: solid 1px #888;
-  background-color: #84B59F;
+  border: solid 0px #000000;
+  background-color: #747474;
 }
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
@@ -32,7 +32,7 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
   border: solid 1px #888;
-  background-color: #A3C9A8;
+  background-color: #bdbdbd;
 }
 
 .container img {
@@ -41,6 +41,3 @@ h1 {
   object-fit: contain;
 }
 
-#owlphoto{
-  width: 100%;
-}
