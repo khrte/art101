@@ -10,7 +10,7 @@ justify-content: center;
 align-items: center;
 width: 800px;
 margin: 0 auto;
-border: 1px solid #ff668a;
+border: 1px solid #000000;
 padding: 3px;
 }
  
@@ -18,14 +18,14 @@ padding: 3px;
 width: 800px;
 background-color: #fff7fb;
 color: #000;
-border: 1px solid #ff668a;
+border: 1px solid #000000;
 }
  
 #header{
 margin-bottom: 10px;
 padding: 10px;
-border-bottom: 1px solid #ff668a;
-background-image: linear-gradient(to right, #de2947, #dfd51a,  #35dc40, #2f29de, #de2947);
+border-bottom: 1px solid #000000;
+background-image: linear-gradient(to right, #000000, #e4e4e4);
 color: #fff;
 letter-spacing: 3px;
 }
@@ -42,7 +42,7 @@ overflow: hidden;
 }
  
 .sidebox{
-border: 1px solid #ff668a;
+border: 1px solid #000000;
 margin: 0px 0px 5px 0px;
 }
  
@@ -81,14 +81,24 @@ overflow: scroll;
 overflow-x: hidden;
 width: 110px;
 height:110px;
-border: 1px solid #ff668a;
+border: 1px solid #000000;
 margin: 0 auto;
 text-align: center;
+}
+
+#scrolly2{
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 150;
+  height: 200;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0 auto;
+  text-align: center;
 }
  
 #scrollyheader{
 margin: 0px;
-border-bottom: 1px dotted #ff668a;
+border-bottom: 1px dotted #000000;
 }
  
 #main{
@@ -99,14 +109,14 @@ padding: 0px 10px 5px 0px;
 }
  
 .mainboxes{
-border: 1px solid #ff668a;
+border: 1px solid #000000;
 padding: 0px;
 margin: 0px 0px 5px 0px;
 }
  
 .subheader{
-background-image: linear-gradient(to right, #3229de, #ffbfce);
-border-bottom: 1px solid #ff668a;
+background-image: linear-gradient(to right, #000000, #e4e4e4);
+border-bottom: 1px solid #000000;
 padding: 3px;
 color: #fff;
 letter-spacing: 3px;
@@ -125,8 +135,8 @@ font-size: 17px;
 #footer{
 clear: both;
 padding: 3px;
-border-top: 1px solid #ff668a;
-background-image: linear-gradient(to bottom right, #3229de, #ddeeff);
+border-top: 1px solid #000000;
+background-image: linear-gradient(to right, #202020, #e4e4e4);
 color: #fff;
 font-size: 14px;
 }
