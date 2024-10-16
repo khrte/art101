@@ -5,5 +5,21 @@
     padding: 10px;
     margin-bottom: 10px;
     border: solid 1px #888;
-    background-color: #DDD8C4;
+    background-color: #ffffff;
   }
+
+.beans{
+  margin: 5px;
+  display: block;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.lit{
+  text-align: center;
+}
+
+.yeahyeahyeah {
+  color: #ffffff;
+}
