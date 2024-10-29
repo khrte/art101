@@ -1,0 +1,32 @@
+/* Here we can set styles for this lab page that we don't want to effect others pages */
+
+.minor-section {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 2px #000000;
+  background-color: #ffffff;
+}
+
+  .oops {
+    display: block;
+    object-fit: contain;
+    height: 550px;
+    width: auto;
+    margin: 5px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px #000000;
+    
+  }
+
+  .yeahyeahyeah {
+    color: #ffffff;
+  }
+
+  .output{ 
+    margin-left: 100px;
+  }
+
+  .yeah{
+    text-align: center;
+  }
