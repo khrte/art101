@@ -30,3 +30,37 @@
   .yeah{
     text-align: center;
   }
+
+  .special {
+    height: auto;
+    width:auto;
+    background-color:#000000;
+    margin-top: 0px;
+    background:linear-gradient(to right, #ec1e1e, #f2b81a, #29e33b, #194fda, #d127e8);
+    font-weight: bold;
+    color: white;
+}
+
+  .special-section{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 2px #000000;
+    background-color: #ffffff;
+    
+}
+
+  #problems{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 2px #000000;
+    background-color: #ffffff;
+  }
+
+  #reflection{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 2px #000000;
+    background-color: #ffffff;
+
+  }
+

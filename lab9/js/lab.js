@@ -1,32 +1,40 @@
 // Kaz Harte 
-// October 26th, 2024
+// November 4th, 2024
+
+//Challenge
+$("#challenge").append("<button id='button-challenge'>Make Special</button>");
+
+$("#button-challenge").click(function(){
+  $("#challenge").toggleClass("special");
+})
+
+//Problems
+$("#problems").append("<button id='button-problem'>Make Special</button>");
+
+$("#button-problem").click(function(){
+  $("#problems").toggleClass("special");
+})
+
+//Reflection
+$("#reflection").append("<button id='button-reflection'>Make Special</button>");
+
+$("#button-reflection").click(function(){
+  $("#reflection").toggleClass("special");
+})
+
+// Task X (Bonus)
+// use the same code and just figure out a way to ensure the button knows what section to toggle. 
+
+$(".special-section").each(function(index){
+  let $button = $("<button>Make Special</button>");
+
+  $button.click(function() {
+    $(this).parent().toggleClass("special");
+  })
+
+  $(this).append($button);
+}); 
 
 
-// Variables
-var MyMainRide = {
-  make: "Mercedes",
-  model: "Convertible",
-  color: "black",
-  year: 2000,
-  age: function() { 
-    return 2024 - this.year;
-      }
-}
-
-var MyTransport = [ 
-  'bus', 'car', 'bike', 'walk'
-  ] 
 
 
-
-
-  // output
-  document.writeln(
-    "Yeah, I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make + "<br>"
-  );
-
-  document.writeln("My Main Ride: <pre>",
-    JSON.stringify(MyMainRide, null, '\t'), "/<pre>"
-  );
-
-  console.log("Yeah I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make)
