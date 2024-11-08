@@ -27,20 +27,36 @@
     margin-left: 100px;
   }
 
-  .yeah{
-    text-align: center;
+   
+  .text.right{
+    float: right;
+    
+  }
+  
+  .text.left{
+    float: left;
+    
   }
 
-
-
-  .text p {
+  .text  {
+    clear: both;
     display: inline-block;
     max-width: 60%;
     margin: 3px;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: black;
+    background-color: darkgray;
     color: white;
     font-family: sans-serif;
     font-size: 0.8em;
   }
+
+  .beans {
+    height: auto;
+    width: 500px;
+  }
+  .yeah{
+    text-align: center;
+    display: flex;
+  }
+

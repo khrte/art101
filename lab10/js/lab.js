@@ -14,13 +14,24 @@ function generateRandomText() {
     return text.slice(randStart, randStart + randLen);
 }
 
+let leftSide = true;
 // button makes text squirm around. 
 $("#make-convo").click(function(){
-  // uses function to mix text
-    const newText = generateRandomText();
+
+  const newText = generateRandomText();
   // Prints text
-    $("#output").append('<div class="text"><p>' + newText + '</p></div>');
+    $("#beans").append('<div class="text"><p>' + newText + '</p></div>');
+
+  // uses function to mix text
+  $(".text").each(function(){
+    $(this).addClass(leftSide ? "left" : "right");
+  })
+
+  leftSide = !leftSide;
+  
 });
+
+
 
 
 
