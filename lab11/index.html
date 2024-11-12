@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Lab 8</title>
+	<title>Lab 11</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
 	<!-- Use UTF character set, a good idea with any webpage -->
@@ -10,50 +10,62 @@
 	<!-- Set viewport so page remains consistently scaled w narrow devices -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<!-- Include a sitewide CSS file for consistent styling across the site -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<!-- Lab-specifc CSS file for any special styling of this particular page -->
-	<link rel="stylesheet" type="text/css" href="css/lab.css">
-	
-	<!-- load jQuery library to make javascript easier (must be above our lab js)-->
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<!-- Link to javascript file - DEFER waits until all elements are rendered -->
-	<script type="text/javascript" src="./js/lab.js" DEFER></script>
+
+	<!-- Sitewide CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<!-- Lab8 only CSS -->
+		<link rel="stylesheet" type="text/css" href="css/lab.css">
+	<!-- jQuery library simplifies JS -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<!-- Link JS - DEFER waits until all elements are rendered -->
+		<script type="text/javascript" src="./js/lab.js" DEFER></script>
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/lab.css -->
 	<main id="content">
 		<section>
-			<h1 class="yeahyeahyeah">Lab 8 - Anon Functions and Callbacks</h1>
+			<h1 class="yeahyeahyeah">Lab 11 - JavaScript Events and Forms</h1>
 			
 			<div class="minor-section">
 					<h2>Challenge: </h2>
 
-					<p>Text</p>
+					<p>Explore JS Events</p>
 					
 			</div>
 
 			<div class="minor-section">
 					<h2>Problems: </h2>
-					<p> Text. </p>
+					<p> I didn't really run into any problems for this lab, maybe because we've worked with 
+						a similar function in the past. 
+						For a moment there was an issue of the first letter of the input not being considered by 
+						the funcions. I'm really not sure what happened there but it only happened once, even when
+						I attempted to recreate the problem.
+		
+					</p>
 			</div>
 
 			<div class="minor-section">
-					<h2>Reflection</h2>
-					<p> Text. </p> 
+					<h2>Reflection:</h2>
+					<p> Unfortunately I did not have time to complete task X this time around, but I'd like to try for the next lab. 
+						I did not really face any issues about this lab, so I have very little to say about the 
+						process. 
+					 </p> 
 			</div>
 
 			<div class="minor-section">
 					<h2>Results: </h2>
-					<div id="output"></div>
-					<div>
-						<h2>Script Output</h2>
-						<script src="js/lab.js"></script>
+					<div id="output">
+						
+						<input  type="text" id="user-name" placeholder="Here Goes the Name">
+						<button id="submit">Submit</button>
+						<div>
+							<script src="js/lab.js"></script>
+						</div>
 					</div>
 					<div>
 						<p class="yeah">______________________________________________________________________________________________________</p>
-						<img class="oops" src="img/dogs.jpeg">
-						<p class="yeah"> Photo Caption</p>
+						<img class="oops" src="img/ekko.jpeg">
+						<p class="yeah"> I just wanted a photo here. </p>
 					</div>
 			</div>
 			

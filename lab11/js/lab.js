@@ -1,32 +1,23 @@
 // Kaz Harte 
-// October 26th, 2024
+// November 12th, 2024
 
-
-// Variables
-var MyMainRide = {
-  make: "Mercedes",
-  model: "Convertible",
-  color: "black",
-  year: 2000,
-  age: function() { 
-    return 2024 - this.year;
-      }
+// Sorts the characters of a string in alphabetical order.
+function sortString(inputString) {
+  // We have to convert our string to an array and back again to sort it
+  return inputString.split('').sort().join('');
 }
 
-var MyTransport = [ 
-  'bus', 'car', 'bike', 'walk'
-  ] 
+// sorts user characters in alphabetical order
+$("#submit").click(function(){
+  // declare variable and get value out of users input
+  const userName = $("#user-name").val();
+  // sort the users name into alphabetical order using past function
+  userNameSorted = sortString(userName);
+  // output new name + create new div for userNameSorted.
+  $("#output").html('<div class="text"><p>' + userNameSorted + '</p></div>');
+});
 
 
 
 
-  // output
-  document.writeln(
-    "Yeah, I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make + "<br>"
-  );
 
-  document.writeln("My Main Ride: <pre>",
-    JSON.stringify(MyMainRide, null, '\t'), "/<pre>"
-  );
-
-  console.log("Yeah I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make)
