@@ -23,8 +23,15 @@
     color: #ffffff;
   }
 
-  .output{ 
-    margin-left: 100px;
+  #output{ 
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    width: 550px;
+    height: auto;
+    border: double 5px black;
+    
   }
 
   .yeah{

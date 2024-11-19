@@ -1,32 +1,34 @@
 // Kaz Harte 
-// October 26th, 2024
+// November 18th, 2024
 
 
-// Variables
-var MyMainRide = {
-  make: "Mercedes",
-  model: "Convertible",
-  color: "black",
-  year: 2000,
-  age: function() { 
-    return 2024 - this.year;
+
+var x = prompt("Enter the Lower Number:");
+var y = prompt("Enter the Higher Number:");
+
+
+//One way to do this is to compile one long string as you output numbers. Something like: 
+
+function FizzBuzz(x, y){
+  var OneLongString = "";
+    for (var i = x; i<y+1; i++){
+      if (i % 3 == 0) {
+        OneLongString += i + ". Fizz!<br>";
       }
+      else if (i % 5 == 0) { 
+        OneLongString += i + ". Buzz!<br>";
+      }
+      else if (i % 7 == 0) {
+        OneLongString += i + ". Boom!<br>";
+      }
+      else {OneLongString  += i + ".<br>"; }
+  
+      
+  } 
+  return OneLongString
 }
 
-var MyTransport = [ 
-  'bus', 'car', 'bike', 'walk'
-  ] 
+$("#output").html(FizzBuzz(parseInt(x), parseInt(y)));
 
+//$("#output").html(FizzBuzz);
 
-
-
-  // output
-  document.writeln(
-    "Yeah, I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make + "<br>"
-  );
-
-  document.writeln("My Main Ride: <pre>",
-    JSON.stringify(MyMainRide, null, '\t'), "/<pre>"
-  );
-
-  console.log("Yeah I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make)

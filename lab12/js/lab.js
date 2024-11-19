@@ -102,5 +102,4 @@ $("#button").click(function(){
 // increases i each time. console log prints it over and over.
 // i++ increments by one. 
 for(let i = 0; i<5; i++) {
-  console.log("hi for the " + (i + 1) + "th time.")
-}
+console.log("hi for the " + (i + 1) + "th time.") 
