@@ -40,7 +40,11 @@ $("#button").click(function(){
   var name = $("#input").val()
   var classObj = ClassSortHash(name)
 
-  $("#output").html("<h1>" + "<p>You're a <span style='color: " + classObj.color + ";'>" + classObj.title + "</span>! </p>" + classObj.text + "</h1>" + "<img class=photo src='img/" + classObj.image + "'>" );
+  //output.
+  $("#output").html("<h1>" + "<p>You're a <span style='color: " + 
+    classObj.color + ";'>" + classObj.title + "</span>! </p>" + 
+    classObj.text + "</h1>" + "<img class=photo src='img/" + 
+    classObj.image + "'>" );
 })
 
 
