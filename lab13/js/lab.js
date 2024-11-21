@@ -2,13 +2,12 @@
 // November 18th, 2024
 
 
-
+// asks the user for function parameters
 var x = prompt("Enter the Lower Number:");
 var y = prompt("Enter the Higher Number:");
 
 
-//One way to do this is to compile one long string as you output numbers. Something like: 
-
+//function with loops thru parameters and outputs num and fizz/buzz/boom
 function FizzBuzz(x, y){
   var OneLongString = "";
     for (var i = x; i<y+1; i++){
@@ -28,7 +27,8 @@ function FizzBuzz(x, y){
   return OneLongString
 }
 
+//makes sure it actually shows up on the website. 
 $("#output").html(FizzBuzz(parseInt(x), parseInt(y)));
 
-//$("#output").html(FizzBuzz);
+
 

@@ -23,21 +23,10 @@
     color: #ffffff;
   }
 
-  #output{ 
+  .output{ 
     margin-left: 100px;
   }
 
   .yeah{
     text-align: center;
-  }
-
-  .coloring{
-    color: green;
-  }
-
-  .photo{
-    width: 300px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
