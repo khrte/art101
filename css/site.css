@@ -157,3 +157,11 @@ right: 0;
 #midhead{
   text-align: center;
 }
+
+.center-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  width: auto;
+}
