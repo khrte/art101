@@ -1,32 +1,38 @@
 // Kaz Harte 
-// October 26th, 2024
+// November 25th, 2024
 
-
-// Variables
-var MyMainRide = {
-  make: "Mercedes",
-  model: "Convertible",
-  color: "black",
-  year: 2000,
-  age: function() { 
-    return 2024 - this.year;
-      }
-}
-
-var MyTransport = [ 
-  'bus', 'car', 'bike', 'walk'
-  ] 
-
-
-
-
-  // output
-  document.writeln(
-    "Yeah, I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make + "<br>"
-  );
-
-  document.writeln("My Main Ride: <pre>",
-    JSON.stringify(MyMainRide, null, '\t'), "/<pre>"
-  );
-
-  console.log("Yeah I get around in my " + MyTransport[1] + ". Its a " + MyMainRide.color + " " + MyMainRide.make)
+const URL = "https://icanhazdadjoke.com/";
+// create a button listener
+$("#button").click(function(){
+    // call ajax
+    $.ajax(ajaxObj);
+  })
+  
+  // setup ajax object
+  const ajaxObj = {
+    url: URL,
+    type: "GET",
+    dataType: "json",
+    headers: {
+      "Accept": "application/json"
+    },
+    success: ajaxSuccess,
+    error: ajaxError
+  }
+  
+  // create ajax success callback (named)
+  function ajaxSuccess(data) {
+    console.log("Data received:", data);
+    const joke = data.joke;
+  
+    // put joke in output div
+    $(".output").html(joke);
+    
+  }
+  
+  
+  // create ajax error callback
+  function ajaxError(request,error){
+        console.log("Oops:", request, error);
+  }
+  
