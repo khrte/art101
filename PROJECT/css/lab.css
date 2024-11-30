@@ -65,8 +65,18 @@
       padding: 0px 10px 5px 0px;
       }
 
+  #header{
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #000000;
+      background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
+      color: #fff;
+      letter-spacing: 3px;
+      }
+         
+
   .subheader{
-        background-image: linear-gradient(to right, #000000, #e4e4e4);
+        background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
         border-bottom: 1px solid #000000;
         padding: 3px;
         color: #fff;
@@ -98,7 +108,7 @@
       clear: both;
       padding: 3px;
       border-top: 1px solid #000000;
-      background-image: linear-gradient(to right, #202020, #e4e4e4);
+      background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
       color: #fff;
       font-size: 14px;
       }
@@ -108,4 +118,7 @@
     
   }
 
-  
+  #button{
+    text-align: center;
+    margin: auto;
+  }

@@ -27,7 +27,7 @@ $('.sidecontent').append(colorPicker)
 // Add an event listener for when the user selects a new color
   colorPicker.addEventListener("input", function(event) {
     // Get the selected color value from the event target (the <input> tag)
-    var selectedColor = event.target.value;
+    selectedColor = event.target.value;
     console.log("selectedColor", selectedColor);
     test = ClassSortHash(selectedColor);
     console.log("Test:", test);
@@ -48,10 +48,11 @@ var colorPicker2 = document.createElement("input");
 
 document.body.appendChild(colorPicker2);
 $('.mainboxescontent').append(colorPicker2)
+
 // Add an event listener for when the user selects a new color
-    colorPicker2.addEventListener("input", function(event) {
+colorPicker2.addEventListener("input", function(event) {
     // Get the selected color value from the event target (the <input> tag)
-    var selectedColor2 = event.target.value;
+    selectedColor2 = event.target.value;
     console.log("selectedColor", selectedColor2);
     test2 = ClassSortHash(selectedColor2);
     console.log("Test2:", test2);
@@ -92,7 +93,7 @@ $("#button").click(function() {
         $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
           "</h2><p> WillPower: " + test2.WLLPWR + 
           "<br> Strength: " + test2.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: " + selectedColor2 + "</h1></div>");
+        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "!</h1></div>");
         //disable button
         $("#button").prop("disabled", true);
         //exit when game is over
@@ -102,7 +103,7 @@ $("#button").click(function() {
         $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
           "</h2><p> WillPower: " + test2.WLLPWR + 
           "<br> Strength: " + test2.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: " + selectedColor + "</h1></div>");
+        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor + ";'</span>" + selectedColor + "!</h1></div>");
 
         $("#button").prop("disabled", true);
         return;
