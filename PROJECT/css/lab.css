@@ -111,7 +111,17 @@
       background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
       color: #fff;
       font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       }
+
+  #links{
+    position: fixed;
+    bottom: 5px; 
+    left: 5px;
+
+  }
 
   #winbox{
     text-align: center;
@@ -120,5 +130,20 @@
 
   #button{
     text-align: center;
-    margin: auto;
+    height: 75px;
+    width: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+
+  #title{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .headerimg{
+    height: 35px;
+    width: auto;
   }

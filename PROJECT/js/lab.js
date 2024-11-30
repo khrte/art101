@@ -72,7 +72,12 @@ colorPicker2.addEventListener("input", function(event) {
     //figure this out then take the math assessment....
 
 $("#button").click(function() {
-  if (test && test2) {
+  if (selectedColor && selectedColor2 && test && test2) {
+    if (test === test2) {
+      alert("Those colors are equally matched. Please select new colors.");
+      return;
+    } // stops the function if the colors are the same
+
       if (test2.STR > test.STR){
         test.hitPoint -= 1;
       } 
@@ -93,18 +98,21 @@ $("#button").click(function() {
         $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
           "</h2><p> WillPower: " + test2.WLLPWR + 
           "<br> Strength: " + test2.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "!</h1></div>");
+        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor + ";'</span>" + selectedColor + "!</h1>" +
+          "<img src='img/winner.gif'></div>");
         //disable button
         $("#button").prop("disabled", true);
         //exit when game is over
         return;
 
-      } else if (test.hitPoint <= 0) {
-        $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
-          "</h2><p> WillPower: " + test2.WLLPWR + 
-          "<br> Strength: " + test2.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor + ";'</span>" + selectedColor + "!</h1></div>");
-
+      } 
+      else if (test.hitPoint <= 0) {
+        $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'</span>" + selectedColor + "</h1><h2>HitPoints: " + 0 + 
+          "</h2><p> WillPower: " + test.WLLPWR + 
+          "<br> Strength: " + test.STR + "</p></div>");
+        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "!</h1>" + 
+          "<img src='img/winner.gif'></div>");
+        
         $("#button").prop("disabled", true);
         return;
       }
