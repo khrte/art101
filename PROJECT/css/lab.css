@@ -7,104 +7,98 @@
   background-color: #ffffff;
 }
 
-  .oops {
-    display: block;
-    object-fit: contain;
-    height: 550px;
-    width: auto;
-    margin: 5px; 
-    margin-left: auto;
-    margin-right: auto;
-    border: solid 2px #000000;
-    
+ /* everything is inside of this.*/
+#container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  padding: 3px;
   }
+  /* makes everything inside of container nice. cute box. */
+  #box{
+      width: 800px;
+      background-color: #fff7fb;
+      color: #000;
+      border: 1px solid #000000;
+      }
 
-  .yeahyeahyeah {
-    color: #ffffff;
-  }
-
-  #output{ 
-    margin-left: 100px;
-  }
-
-
-
-  #container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
-    margin: 0 auto;
-    border: 1px solid #000000;
-    padding: 3px;
+/* main header thats rainbow */
+  #header{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
+    color: #fff;
+    letter-spacing: 3px;
     }
+    /* goes inside of header, displays COLOR BATTLE */
+    #title{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+        }
+    /* for the GIFs next to title */
+    .headerimg{
+        height: 35px;
+        width: auto;
+        }  
+        /* for the color 1 and 2 boxes */
+        .subheader{
+            background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
+            border-bottom: 1px solid #000000;
+            padding: 3px;
+            color: #fff;
+            letter-spacing: 3px;
+          }
 
+
+/* left side*/
   #side{
     float: left;
     width: 384px;
     padding: 0px 0px 5px 10px;
     overflow: hidden;
     }
-
+    /* box for color 1 */
     .sidebox{
       border: 1px solid #000000;
       margin: 0px 0px 5px 0px;
       }
-
-      .sidecontent{
+      /* for color picker and stats. */
+      sidecontent{
         padding: 0px 0px 0px 5px;
         color: #6e5057;
         font-size: 17px;
         letter-spacing: 1px;
         }
   
+/* right side */
   #main{
-      float: right;
-      width: 384px;
-      overflow: hidden;
-      padding: 0px 10px 5px 0px;
-      }
-
-  #header{
-      margin-bottom: 10px;
-      padding: 10px;
-      border-bottom: 1px solid #000000;
-      background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
-      color: #fff;
-      letter-spacing: 3px;
-      }
-         
-
-  .subheader{
-        background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
-        border-bottom: 1px solid #000000;
-        padding: 3px;
-        color: #fff;
-        letter-spacing: 3px;
+    float: right;
+    width: 384px;
+    overflow: hidden;
+    padding: 0px 10px 5px 0px;
     }
-
+    /* contains stuff for color 2 */
     .mainboxescontent{
       padding: 0px 15px 0px 15px;
       color: #6e5057;
       font-size: 17px;
       }
 
-  .favcolor{
-    display: block;
-    height: 100px;
-    width: 100px;
-    margin: auto;
-    border: 10px;
-  }
-
-  #box{
-    width: 800px;
-    background-color: #fff7fb;
-    color: #000;
-    border: 1px solid #000000;
+  /* self explanatory, the winner goes here. */
+  #winbox{
+    text-align: center;
+    z-index: 9;   
+    background: #37e310;
+    position: absolute;
     }
 
-    #footer{
+
+/* where the button goes, rainbow bottom. */
+  #footer{
       clear: both;
       padding: 3px;
       border-top: 1px solid #000000;
@@ -115,35 +109,29 @@
       justify-content: center;
       align-items: center;
       }
+      /* makes the button look pretty and centered. */
+      #button{
+          text-align: center;
+          height: 75px;
+          width: 100px;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          background: none;
+          border: none;
+          color: #fff;
+          }
 
-  #links{
-    position: fixed;
-    bottom: 5px; 
-    left: 5px;
-
+/* puts go back link at the bottom of the page. */
+#links{
+  position: fixed;
+  bottom: 5px; 
+  left: 5px;
+  }
+.favcolor{
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border: 10px;
   }
 
-  #winbox{
-    text-align: center;
-    
-  }
 
-  #button{
-    text-align: center;
-    height: 75px;
-    width: 100px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: none;
-    border: none;
-    color: #fff;
-  }
-
-  #title{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-  }
-
-  .headerimg{
-    height: 35px;
-    width: auto;
-  }

@@ -23,8 +23,12 @@
     color: #ffffff;
   }
 
-  .output{ 
-    margin-left: 100px;
+  #output{ 
+    margin: auto;
+  }
+  #futurepast{ 
+    text-align: center;
+    display: block;
   }
 
   .yeah{
