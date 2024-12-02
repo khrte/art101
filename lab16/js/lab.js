@@ -31,11 +31,11 @@ $("#button").click(function(){
 //this api works just like the xkcd one.
     //pretend like nasa photos can be accessed by number.
 
-function NasaPhotos(num) {
-  if (typeof num === 'undefined') {
+function NasaPhotos(date) {
+  if (typeof date === 'undefined') {
     numStr = "";
   } else {
-    numStr = num.toString() + "/";
+    numStr = date.toString() + "/";
   }
   var realURL = URLstart + numStr + URLend;
   console.log(realURL);
