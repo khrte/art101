@@ -77,28 +77,37 @@ $("#button").click(function() {
       alert("Those colors are equally matched. Please select new colors.");
       return;
     } // stops the function if the colors are the same
+      if (test2.STR === test.STR){
+        if (test2.WLLPWR < test.WLLPWR){
+          $('#log').append("<div><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>")
+          test2.hitPoint -= 1;
+        }
+        else if (test2.WLLPWR > test.WLLPWR){
+          $('#log').append("<div><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>")
+          test.hitPoint -= 1;
+        }}
 
-      if (test2.STR > test.STR){
+      else if (test2.STR > test.STR){
+        $('#log').append("<div><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>")
         test.hitPoint -= 1;
       } 
       else if (test2.STR < test.STR){
+        $('#log').append("<div><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>")
         test2.hitPoint -= 1;
       }
-      else if (test2.STR === test.STR){
-          if (test2.WILLPWR < test.WLLPWR){
-            test2.hitPoint -= 1;
-          }
-          else if (test2.WLLPWR > test.WLLPWR){
-            test.hitPoint -= 1;
-          }
-        }
+      
 
         //create a new box where winner is announced. 
       if (test2.hitPoint <= 0) {
         $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
           "</h2><p> WillPower: " + test2.WLLPWR + 
           "<br> Strength: " + test2.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor + ";'</span>" + selectedColor + "!</h1>" +
+       
+        
+        $('#winbox').html("<div style='background-color:" + selectedColor + 
+          ";'><h1>Winner is: <span style='text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color: " + 
+          selectedColor + ";'</span>" + 
+          selectedColor + "!</h1>" + 
           "<img src='img/winner.gif'></div>");
         //disable button
         $("#button").prop("disabled", true);
@@ -110,8 +119,12 @@ $("#button").click(function() {
         $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'</span>" + selectedColor + "</h1><h2>HitPoints: " + 0 + 
           "</h2><p> WillPower: " + test.WLLPWR + 
           "<br> Strength: " + test.STR + "</p></div>");
-        $('#winbox').html("<div><h1>Winner is: <span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "!</h1>" + 
-          "<img src='img/winner.gif'></div>");
+          
+          $('#winbox').html("<div style='background-color:" + selectedColor2 + 
+            ";'><h1>Winner is: <span style='text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color: " + 
+            selectedColor2 + ";'</span>" + 
+            selectedColor2 + "!</h1>" + 
+            "<img src='img/winner.gif'></div>");
         
         $("#button").prop("disabled", true);
         return;
@@ -153,6 +166,16 @@ function ClassSortHash(str) {
   return colorStats[mod];      
   // returns an object from the array
 }
+
+
+
+//Problems
+$("#problems").append("<button id='button-problem'>Make Special</button>");
+
+$("#button-problem").click(function(){
+  $("#problems").toggleClass("special");
+  //switch to selectedCOlor.
+})
 
 
 

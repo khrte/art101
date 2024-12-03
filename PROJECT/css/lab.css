@@ -91,34 +91,41 @@
   /* self explanatory, the winner goes here. */
   #winbox{
     text-align: center;
-    z-index: 9;   
-    background: #37e310;
-    position: absolute;
+    z-index: 5;  
+    width: 798px;
+    position: fixed;
+    /* visibility: hidden; */
+    
     }
 
 
 /* where the button goes, rainbow bottom. */
   #footer{
       clear: both;
-      padding: 3px;
+      padding: 7px;
       border-top: 1px solid #000000;
       background-image: linear-gradient(to right, #e01c0d, #e87a13, #ffe017, #37e310, #1045e3, #9a13e8, #e01c0d);
       color: #fff;
       font-size: 14px;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
       align-items: center;
       }
       /* makes the button look pretty and centered. */
       #button{
           text-align: center;
-          height: 75px;
+          height: 60px;
           width: 100px;
           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
           background: none;
-          border: none;
+          border: solid, white;
+          padding: 2px;
           color: #fff;
+
           }
+     
 
 /* puts go back link at the bottom of the page. */
 #links{
