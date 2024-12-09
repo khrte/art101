@@ -13,6 +13,7 @@ $("#problems").append("<button id='button-problem'>Make Special</button>");
 
 $("#button-problem").click(function(){
   $("#problems").toggleClass("special");
+  //toggleClass color=selectedColor
 })
 
 //Reflection
