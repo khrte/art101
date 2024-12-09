@@ -125,6 +125,9 @@
           color: #fff;
 
           }
+#log{
+  
+}
      
 
 /* puts go back link at the bottom of the page. */
@@ -141,4 +144,8 @@
   border: 10px;
   }
 
-
+.centered{
+  text-align: center;
+  font-size: larger;
+  padding: 5px;
+}

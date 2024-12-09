@@ -16,6 +16,7 @@ let suitdrawn = null;
 let suitdrawn2 = null;
 
 
+
 function fetchSuitDrawn() {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -49,25 +50,53 @@ function fetchSuitDrawn() {
             suitdrawn = drawncards[0].suit;
             suitdrawn2 = drawncards[1].suit;
               console.log("Drawn Suit's: ", suitdrawn, ", ", suitdrawn2);
+
+            //update stats
+            updateStatsBasedOnSuit(suitdrawn, selectedColor, test);
+            updateStatsBasedOnSuit(suitdrawn2, selectedColor2, test2);
+            resolve();
             },
 
           error: function(request,error){
             console.log("Oh no: ", request, error);
-            },
+            reject("Error drawing cards.");
+            }
       });
-    resolve();
     },
-
-
     error: function(xhr, status, error) {
       reject("Error shuffling deck: " + error);
-    }
-    //error: function(request,error){
-      //console.log("Oh no: ", request, error);
-      //},
+      }
     });
   });
 }
+   
+function updateStatsBasedOnSuit(suit, color, stats) {
+  if (suit === "HEARTS") {
+    console.log("HitPoint Stats", stats.hitPoint);
+    stats.hitPoint = parseInt(stats.hitPoint) + 1; // Heal 1 HP
+    $('#log').append("<p>" + color + " miraculously heals for 1 Hit Point. +1 to " + color + "'s HP.</p>");
+  } else if (suit === "SPADES") {
+    stats.STR = parseInt(stats.STR) + 1;   // Boost Strength by 1
+    $('#log').append("<p>" + color + " downs some steroids. Permanent +1 to " + color + "'s strength.</p>");
+  } else if (suit === "CLUBS") {
+    stats.WLLPWR = parseInt(stats.WLLPWR) + 1; // Boost Willpower by 1
+      $('#log').append("<p>" + color + " is feeling especially inspired. Permanent +1 to " + color + "'s willpower.</p>");
+  } else if (suit === "DIAMONDS") {
+    // Temporary attack boost (this could be enhanced further)
+      $('#log').append("<p>" + color + " is getting worked up. For this round " + color + " has +1 to its attack.</p>");
+      console.log(color, " now does double damage.")
+  }
+}
+
+//function updateStatsDisplay() {
+  //$('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'>" + selectedColor + "</span></h1>" +
+    //"<h2>HitPoints: " + test.hitPoint + "</h2><p> WillPower: " + test.WLLPWR + 
+    //"<br> Strength: " + test.STR + "</p></div>");
+
+  //$('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'>" + selectedColor2 + "</span></h1>" + 
+    //"<h2>HitPoints: " + test2.hitPoint + "</h2><p> WillPower: " + test2.WLLPWR + 
+    //"<br> Strength: " + test2.STR + "</p></div>");
+//}
 //theDeckfunc
 
 
@@ -143,72 +172,63 @@ $(".button").click(async function() {
 
     await fetchSuitDrawn();
     //may still need to call ajax ??? 
+    
 
-  if (selectedColor && selectedColor2 && test && test2 && suitdrawn && suitdrawn2) {
-    //this is where we will assign card values to colors. card 0 is for selectedColor. card 1 is for selectedColor2
-    if (suitdrawn === "HEARTS") {
-      $('#log').append("<div><p>" + selectedColor + " miraculously heals for 1 Hit Point. +1 to " + selectedColor + "'s HP.");
-      test.hitPoint += 1;
-    }
-      else if (suitdrawn === "SPADES") {
-        $('#log').append("<div><p>" + selectedColor + " downs some steroids. Permanent +1 to " + selectedColor + "'s strength.");
-        test.STR += 1;
-      }
-        else if (suitdrawn === "CLUBS") {
-          $('#log').append("<div><p>" + selectedColor + " is feeling especially inspired. Permanent +1 to " + selectedColor + "'s willpower.");
-          test.WLLPWR += 1;
-        }
-          else if (suitdrawn === "DIAMONDS") {
-            $('#log').append("<div><p>" + selectedColor + " is getting worked up. For this round " + selectedColor + " has +1 to it's attack.");
-             // later -> if suitdrawn === DIAMONDS. 2 -= etc.
-            }
-
-
-    if (suitdrawn2 === "HEARTS") {
-      $('#log').append("<div><p>" + selectedColor2 + " miraculously heals for 1 Hit Point. +1 to " + selectedColor2 + "'s HP.");
-      test2.hitPoint += 1;
-      }
-      else if (suitdrawn2 === "SPADES") {
-        $('#log').append("<div><p>" + selectedColor2 + " downs some steroids. Permanent +1 to " + selectedColor2 + "'s strength.");
-        test2.STR += 1;
-        }
-        else if (suitdrawn2 === "CLUBS") {
-          $('#log').append("<div><p>" + selectedColor2 + " is feeling especially inspired. Permanent +1 to " + selectedColor2 + "'s willpower.");
-          test2.WLLPWR += 1;
-          }
-          else if (suitdrawn2 === "DIAMONDS") {
-            $('#log').append("<div><p>" + selectedColor2 + " is getting worked up. For this round " + selectedColor2 + " has +1 to it's attack.");
-            // later -> if suitdrawn === DIAMONDS. 2 -= etc.
-            }
+if (selectedColor && selectedColor2 && test && test2 && suitdrawn && suitdrawn2) {
     
     //ensure two colors with the same stats are not competing.
-  if (test === test2) {
-    alert("Those colors are equally matched. Please select new colors.");
-    return;
-    } 
+if (test === test2) {
+  alert("Those colors are equally matched. Please select new colors.");
+  return;
+  } 
 
-    //if color strength is equal, test willpower
+  //if color strength is equal, test willpower
   if (test2.STR === test.STR){
     if (test2.WLLPWR < test.WLLPWR){
-      $('#log').append("<div><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>");
-      test2.hitPoint -= 1;
+      //this is only if color 1 is dealing damage
+      if (suitdrawn === "DIAMONDS"){
+        $('#log').append("<div class=centered><p>"+ selectedColor + " delt 2 damage to " + selectedColor2 + "</p></div>");
+        test2.hitPoint -= 2;
       }
+      else{
+        $('#log').append("<div class=centered><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>");
+        test2.hitPoint -= 1;
+      }
+    }
 
-      else if (test2.WLLPWR > test.WLLPWR){
-        $('#log').append("<div><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>");
+    else if (test2.WLLPWR > test.WLLPWR){
+      if (suitdrawn2 === "DIAMONDS"){
+        $('#log').append("<div class=centered><p>"+ selectedColor2 + " delt 2 damage to " + selectedColor + "</p></div>");
+        test.hitPoint -= 2;
+      }
+      else{
+        $('#log').append("<div class=centered><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>");
         test.hitPoint -= 1;
-        }} //ends will power testing.
-    
-    //strength testing.
-  else if (test2.STR > test.STR){
-    $('#log').append("<div><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>");
-    test.hitPoint -= 1;
-    } 
-
-    else if (test2.STR < test.STR){
-      $('#log').append("<div><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>");
-      test2.hitPoint -= 1;
       }
+    }
+  } //ends will power testing.
+
+  //Test2 is stronger
+  else if (test2.STR > test.STR){
+    if (suitdrawn2 === "DIAMONDS"){
+      $('#log').append("<div class=centered><p>"+ selectedColor2 + " delt 2 damage to " + selectedColor + "</p></div>");
+      test.hitPoint -= 2;
+    }
+    else{
+      $('#log').append("<div class=centered><p>"+ selectedColor2 + " delt 1 damage to " + selectedColor + "</p></div>");
+      test.hitPoint -= 1;}
+    }
+     
+  else if (test2.STR < test.STR){
+    if(suitdrawn === "DIAMONDS"){
+      $('#log').append("<div class=centered><p>"+ selectedColor + " delt 2 damage to " + selectedColor2 + "</p></div>");
+      test2.hitPoint -= 2;
+      }
+    else{
+      $('#log').append("<div class=centered><p>"+ selectedColor + " delt 1 damage to " + selectedColor2 + "</p></div>");
+      test2.hitPoint -= 1;
+    }
+  }
       
 
     //if color 1 wins:
@@ -223,7 +243,6 @@ $(".button").click(async function() {
         selectedColor + "!</h1>" + 
         "<img src='img/winner.gif'></div>");
 
-      
     $("#button").prop("disabled", true);
     return; //exit game when over. 
     } //closes winner box for test 2.
