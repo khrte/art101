@@ -80,7 +80,7 @@ function updateStatsBasedOnSuit(suit, color, stats) {
     $('#log').append("<p>" + color + " downs some steroids. Permanent +1 to " + color + "'s strength.</p>");
   } else if (suit === "CLUBS") {
     stats.WLLPWR = parseInt(stats.WLLPWR) + 1; // Boost Willpower by 1
-      $('#log').append("<p>" + color + " is feeling especially inspired. Permanent +1 to " + color + "'s willpower.</p>");
+      $('#log').append("<p>" + color + " is feeling especially inspired. Permanent +1 to " + color + "'s will power.</p>");
   } else if (suit === "DIAMONDS") {
     // Temporary attack boost (this could be enhanced further)
       $('#log').append("<p>" + color + " is getting worked up. For this round " + color + " has +1 to its attack.</p>");
@@ -102,12 +102,14 @@ function updateStatsBasedOnSuit(suit, color, stats) {
 
   
 colorStats = [
-  {hitPoint: "5", STR: "4", WLLPWR: "2"},{hitPoint: "4", STR: "2", WLLPWR: "4"},
-  {hitPoint: "2", STR: "1", WLLPWR: "6"}, {hitPoint: "4", STR: "6", WLLPWR: "1"},
-  {hitPoint: "3", STR: "3", WLLPWR: "2"}, {hitPoint: "8", STR: "1", WLLPWR: "3"},
-  {hitPoint: "2", STR: "6", WLLPWR: "4"}, {hitPoint: "3", STR: "9", WLLPWR: "5"},
-  {hitPoint: "5", STR: "1", WLLPWR: "8"}, {hitPoint: "7", STR: "5", WLLPWR: "2"},
-  {hitPoint: "1", STR: "5", WLLPWR: "2"}, {hitPoint: "4", STR: "6", WLLPWR: "5"}
+  //         Stronger less HP                       Weaker more HP
+  //STR and WLLPWR range from 1 - 6
+  {hitPoint: "3", STR: "5", WLLPWR: "2"},{hitPoint: "6", STR: "2", WLLPWR: "5"},
+  {hitPoint: "3", STR: "4", WLLPWR: "3"}, {hitPoint: "6", STR: "3", WLLPWR: "4"},
+  {hitPoint: "3", STR: "3", WLLPWR: "3"}, {hitPoint: "6", STR: "2", WLLPWR: "4"},
+  {hitPoint: "3", STR: "5", WLLPWR: "1"}, {hitPoint: "6", STR: "4", WLLPWR: "5"},
+  {hitPoint: "3", STR: "3", WLLPWR: "2"}, {hitPoint: "6", STR: "2", WLLPWR: "3"},
+  {hitPoint: "3", STR: "6", WLLPWR: "1"}, {hitPoint: "6", STR: "1", WLLPWR: "6"}
 ]
 //setting selectedColor var so the rest of the code can access it outside of event listener.
 
@@ -132,8 +134,8 @@ colorPicker.addEventListener("input", function(event) {
     console.log("Test:", test);
 
 
-  $('.sidecontent2').html("<div><h1> <span style='color: "+ selectedColor + ";'</span>" + selectedColor + "</h1><h2>HitPoints: " + test.hitPoint + 
-    "</h2><p> WillPower: " + test.WLLPWR + 
+  $('.sidecontent2').html("<div><h1> <span style='color: "+ selectedColor + ";'</span>" + selectedColor + "</h1><h2>Hit Points: " + test.hitPoint + 
+    "</h2><p> Will Power: " + test.WLLPWR + 
     "<br> Strength: " + test.STR + "</p></div>");
 });
 
@@ -156,8 +158,8 @@ colorPicker2.addEventListener("input", function(event) {
 
     $("#sidecontent").html(test2);
   
-    $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + test2.hitPoint + 
-      "</h2><p> WillPower: " + test2.WLLPWR + 
+    $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>Hit Points: " + test2.hitPoint + 
+      "</h2><p> Will Power: " + test2.WLLPWR + 
       "<br> Strength: " + test2.STR + "</p></div>");
 });
 
@@ -233,8 +235,8 @@ if (test === test2) {
 
     //if color 1 wins:
   if (test2.hitPoint <= 0) {
-    $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>HitPoints: " + 0 + 
-        "</h2><p> WillPower: " + test2.WLLPWR + 
+    $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'</span>" + selectedColor2 + "</h1><h2>Hit Points: " + 0 + 
+        "</h2><p> Will Power: " + test2.WLLPWR + 
         "<br> Strength: " + test2.STR + "</p></div>");
   
     $('#winbox').html("<div style='background-color:" + selectedColor + 
@@ -249,8 +251,8 @@ if (test === test2) {
 
     //if color 2 wins:
     else if (test.hitPoint <= 0) {
-      $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'</span>" + selectedColor + "</h1><h2>HitPoints: " + 0 + 
-        "</h2><p> WillPower: " + test.WLLPWR + 
+      $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'</span>" + selectedColor + "</h1><h2>Hit Points: " + 0 + 
+        "</h2><p> Will Power: " + test.WLLPWR + 
         "<br> Strength: " + test.STR + "</p></div>");
           
       $('#winbox').html("<div style='background-color:" + selectedColor2 + 
@@ -266,11 +268,11 @@ if (test === test2) {
 
     //update
 $('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'>" + selectedColor + "</span></h1>" + 
-  "<h2>HitPoints: " + test.hitPoint + "</h2><p> WillPower: " + test.WLLPWR + 
+  "<h2>Hit Points: " + test.hitPoint + "</h2><p> Will Power: " + test.WLLPWR + 
   "<br> Strength: " + test.STR + "</p></div>");
 
 $('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'>" + selectedColor2 + "</span></h1>" + 
-  "<h2>HitPoints: " + test2.hitPoint + "</h2><p> WillPower: " + test2.WLLPWR + 
+  "<h2>Hit Points: " + test2.hitPoint + "</h2><p> Will Power: " + test2.WLLPWR + 
   "<br> Strength: " + test2.STR + "</p></div>");
 
   
