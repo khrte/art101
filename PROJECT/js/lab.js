@@ -1,5 +1,6 @@
 // Kaz Harte 
-// October 26th, 2024
+// ART 101 with Wes Modes
+// October 26th, 2024\
 
 
 const URL = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
@@ -88,18 +89,6 @@ function updateStatsBasedOnSuit(suit, color, stats) {
   }
 }
 
-//function updateStatsDisplay() {
-  //$('.sidecontent2').html("<div><h1><span style='color: " + selectedColor + ";'>" + selectedColor + "</span></h1>" +
-    //"<h2>HitPoints: " + test.hitPoint + "</h2><p> WillPower: " + test.WLLPWR + 
-    //"<br> Strength: " + test.STR + "</p></div>");
-
-  //$('.mainboxescontent2').html("<div><h1><span style='color: " + selectedColor2 + ";'>" + selectedColor2 + "</span></h1>" + 
-    //"<h2>HitPoints: " + test2.hitPoint + "</h2><p> WillPower: " + test2.WLLPWR + 
-    //"<br> Strength: " + test2.STR + "</p></div>");
-//}
-//theDeckfunc
-
-
   
 colorStats = [
   //         Stronger less HP                       Weaker more HP
@@ -111,8 +100,6 @@ colorStats = [
   {hitPoint: "3", STR: "3", WLLPWR: "2"}, {hitPoint: "6", STR: "2", WLLPWR: "3"},
   {hitPoint: "3", STR: "6", WLLPWR: "1"}, {hitPoint: "6", STR: "1", WLLPWR: "6"}
 ]
-//setting selectedColor var so the rest of the code can access it outside of event listener.
-
 
 
 
@@ -164,10 +151,6 @@ colorPicker2.addEventListener("input", function(event) {
 });
 
  
-//purpose of this was to make this ??? work when color was picked??? 
-    //but need: once both colors are picked, make it possible to click fight button. 
-
-    //figure this out then take the math assessment....
 
 $(".button").click(async function() {
   try {
